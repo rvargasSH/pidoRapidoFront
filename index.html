@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Gift Finder</title>
+    <title>Pido Rapido</title>
     <meta name="description" content="Gift Finder">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
@@ -14,160 +14,63 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
-    <div class="boxed-page">
-        <section id="begin_page" class="custom-border">
-            <div class="container">
-                <div class="section-content">
-                    <h2 class="section-title">
-                        <strong class="text-white-italic">Encuentra tu regalo perfecto</strong>
-                    </h2>
-                    <div class="row text-center d-flex justify-content-center">
-                        <div class="col-md-4 col-sm-6 ">
-                            <img class="rounded-circle" src="icons/ok.gif" alt="Generic placeholder image" width="140"
-                                height="140">
-                        </div>
-                    </div>
-                    <div class="row text-center d-flex justify-content-center">
-                        <div class="col-md-4 col-sm-6 ">
-                            <a href="#" class="btn btn-block button-custom"
-                                onClick="showAndHideElement('begin_page','gift_to')"><strong style="color:white">Sí,
-                                    vamos!</strong></a>
-                        </div>
+
+    <div class="modal fade" id="mailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingrese Su Correo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span class="text-black-italic font-medium">Para gestionar su pedido es necesario que ingrese su
+                        correo
+                        electrónico</span>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="email">
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="gift_to" class="custom-border" style="display:none;">
-            <div class="container">
-                <div class="section-content">
-                    <div class="title-wrap">
-                        <h2 class="section-title">
-                            <strong class="text-white-italic">Un regalo para ...</strong>
-                        </h2>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-12 features-holder">
-                            <div class="row">
-                                <div class="col-md-2">
-                                </div>
-                                <div class="card col-md-4 mr-2" style="background-color: #c03636;border: none;">
-                                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                        <img src="img/womensymbol.png" class="img-fluid" />
-                                        <a href="#!">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="card-body d-flex justify-content-center">
-                                        <a href="#!" class="btn btn-block button-custom"
-                                            onClick="showAndHideElement('gift_to','characteristics','F')"><strong
-                                                style="color:white">ELLA</strong></a>
-                                    </div>
-                                </div>
-                                <div class="card col-md-4 ml-2" style="background-color: #c03636;border: none;">
-                                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                        <img src="img/mensymbol.png" class="img-fluid" />
-                                        <a href="#!">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="card-body d-flex justify-content-center">
-                                        <a href="#!" class="btn btn-block button-custom"
-                                            onClick="showAndHideElement('gift_to','characteristics','M')"><strong
-                                                style="color:white">ÉL</strong></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row text-center mt-5" style="margin-bottom: -10%;">
-                                <div class="col-md-4 col-sm-6 ">
-                                    <div href="#" class="arrow arrow-left"
-                                        onClick="returnButton('gift_to','begin_page')">
-                                        <strong>Volver</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveEmail()">Guardar</button>
                 </div>
             </div>
-        </section>
-        <section id="characteristics" class="custom-border" style="display:none;">
-            <div class="container">
-                <div class="section-content">
-                    <div class="title-wrap">
-                        <h2 class="section-title"><strong class="text-white-italic">Describe a esa persona especial
-                                ....</strong></h2>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-12 features-holder">
-                            <div class="row d-flex justify-content-center">
-
-                            </div>
-                            <div class="row d-flex justify-content-center" id="container_to_characteristics">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row text-center mt-5" style="margin-bottom: -10%;">
-                        <div class="col-md-4 col-sm-6 ">
-                            <div href="#" class="arrow arrow-left" onClick="returnButton('characteristics','gift_to')">
-                                <strong>Volver</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="price_range" class="custom-border" style="display:none;">
-            <div class="container">
-                <div class="section-content">
-                    <div class="title-wrap">
-                        <h2 class="section-title"><strong class="text-white-italic">Rango de precio</strong></h2>
-                    </div>
-                    <div class="card-deck mb-3 text-center" id="container_range_price">
-
-                    </div>
-                    <div class="row text-center mt-5" style="margin-bottom: -10%;">
-                        <div class="col-md-4 col-sm-6 ">
-                            <div href="#" class="arrow arrow-left"
-                                onClick="returnButton('price_range','characteristics')"><strong>Volver</strong></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="choose_gitf" class="custom-border" style="display:none;">
-            <div class="container">
-                <div class="section-content">
-                    <div class="title-wrap">
-                        <h2 class="section-title" id="choose_gift_title"></b></h2>
-                        <p class="section-sub-title" id="choose_gift_subtitle"> </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 blog-holder">
-                            <div class="row" id="container_gifts">
-                            </div>
-                            <div class="row">
-                                <div class="card-body p-4 d-flex justify-content-center" id="choose_all_gifts">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row text-center mt-5" style="margin-bottom: -10%;">
-                        <div class="col-md-4 col-sm-6 ">
-                            <div href="#" class="arrow arrow-left" onClick="returnButton('choose_gitf','price_range')">
-                                <strong>Volver</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
-
+    <div class="modal fade " id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <section id="begin_page">
+                            <div class="container">
+                                <div class="section-content">
+                                    <h2 class="section-title">
+                                        <strong class="text-black-italic">Gracias por tu compra</strong>
+                                    </h2>
+                                    <div class="row text-center d-flex justify-content-center">
+                                        <div class="col-md-4 col-sm-6 ">
+                                            <img class="rounded-circle" src="icons/ok.gif"
+                                                alt="Generic placeholder image" width="140" height="140">
+                                        </div>
+                                    </div>
+                                    <div class="row text-center d-flex justify-content-center">
+                                        <div class="col-md-4 col-sm-6 ">
+                                            <span class="text-black-italic font-medium">Estamos gestionando tu
+                                                información ...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="vendor/bootstrap/popper.min.js"></script>

@@ -7,7 +7,7 @@ html {
   overflow-x: hidden; }
 
 body {
-  background-image: url(../img/backgroudtest.jpg);
+  background-image: url(../img/backgroudtest.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -130,6 +130,13 @@ a:hover {
  .text-white-italic{   
   color: white;
   font-style: italic;
+ }
+ .text-black-italic{   
+  color: black;
+  font-style: italic;
+ }
+ .font-medium{
+   font-size: 25px;
  }
 
  .text-white{   
